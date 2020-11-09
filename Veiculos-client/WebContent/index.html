@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/veiculos.js"></script>
+</head>
+
+<body>
+
+    <h1>Veículos</h1>
+    <hr />
+
+   <div id="actions">
+
+        <fieldset>
+            <legend>Ações</legend>
+			<div>
+	            <input type="button" id="btnListAll" value="Listar Todos">
+	            <input type="button" id="btnListLastReg" value="Listar Registrados Última Semana">
+            </div>
+            <div>
+	            <input type="button" id="btnQtdNaoVendidos" value="Exibir Quantidade De Veículos Não Vendidos">
+	        </div>
+            <div>
+            <label for="selecionaFabricante">Exibir Quantidade Veículos Distribuídos (por fabricante)</label>
+			<select id="selecionaFabricante">
+			  <option value="none" selected>Selecione um fabricante</option>
+			  <option value="Fiat">Fiat</option>
+			  <option value="Ford">Ford</option>
+			  <option value="Volkswagen">Volkswagen</option>
+			  <option value="Mitsubishi">Mitsubishi</option>
+			</select>
+			</div>
+			<div>
+			<label for="decadas">Exibir Quantidade Veículos Distribuídos (por decada de fabricação)</label>
+			<select id="selecionaDecada">
+			  <option value="none" selected>Selecione uma década</option>
+			  <option value="1950">1950</option>
+			  <option value="1960">1960</option>
+			  <option value="1970">1970</option>
+			  <option value="1980">1980</option>
+			  <option value="1990">1990</option>
+			  <option value="2000">2000</option>
+			  <option value="2010">2010</option>
+			  <option value="2020">2020</option>
+			</select>
+			</div>
+        </fieldset>
+
+    </div>
+
+    <div id="result"></div>
+
+    <input type="button" value="Novo" onclick="newVeiculo();">
+
+    <br />
+    <br />
+
+    <div id="form" style="visibility: hidden; display: none;">
+
+		<form>
+			<fieldset>
+				<legend id="fieldset"></legend>
+				<input id="veiculoId" type="hidden"> 
+				<div>
+				<label for="fabricante">Fabricante:</label>
+				<select id="fabricante">
+				  <option value="none" selected>Selecione</option>
+				  <option value="Fiat">Fiat</option>
+				  <option value="Ford">Ford</option>
+				  <option value="Volkswagen">Volkswagen</option>
+				  <option value="Mitsubishi">Mitsubishi</option>
+				</select>
+				</div>
+				<label for="veiculoNome">Nome:
+				</label> <input id="veiculoNome" type="text" name="veiculoNome" />
+				<br />
+				<label for="ano">Ano:
+				</label> <input id="ano" type="number" min="1900" max="2020" maxlength="4" name="ano" />
+				<br />
+				<label for="marca">Descrição:
+				</label> <input id="descricao" type="text" name="descricao" />
+				<br />
+				<div>
+				  <input type="checkbox" id="vendido" name="vendido"
+				         >
+				  <label for="vendido">Vendido</label>
+				</div>
+
+				
+
+				<br /> <input id="btnSave" type="button" value="Salvar"
+					onclick="saveOrUpdate();"> <input id="btnCancel"
+					type="reset" value="Cancelar" onclick="cancel();">
+
+			</fieldset>
+		</form>
+	</div>
+
+
+</body>
+
+</html>
